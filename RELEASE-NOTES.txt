@@ -6,7 +6,7 @@
 
 6.2
 -----
-
+* [*] Changed the selection checkmark when adding linked products to one that's more visible over the purple selection background, and resets the picture frame color when not selected. [https://github.com/woocommerce/woocommerce-android/pull/3645]
 
 6.1
 -----
