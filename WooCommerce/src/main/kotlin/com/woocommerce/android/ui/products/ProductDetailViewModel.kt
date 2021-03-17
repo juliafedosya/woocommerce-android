@@ -141,7 +141,7 @@ class ProductDetailViewModel @AssistedInject constructor(
             }
         }
     }
-    private var viewState by productDetailViewStateData
+    internal var viewState by productDetailViewStateData
 
     // view state for the product categories screen
     val productCategoriesViewStateData = LiveDataDelegate(savedState, ProductCategoriesViewState())
@@ -961,25 +961,6 @@ class ProductDetailViewModel @AssistedInject constructor(
         _attributeList.value = getProductDraftAttributes()
     }
 
-    /**
-     * Returns the list of attributes assigned to the product
-     */
-    fun getProductDraftAttributes(): List<ProductAttribute> {
-        return viewState.productDraft?.attributes ?: emptyList()
-    }
-
-    /**
-     * Returns the list of term names for a specific attribute assigned to the product
-     */
-    fun getProductDraftAttributeTerms(attributeId: Long, attributeName: String): List<String> {
-        val attributes = getProductDraftAttributes()
-        attributes.forEach { attribute ->
-            if (attribute.name == attributeName) {
-                return attribute.terms
-            }
-        }
-        return emptyList()
-    }
 
     /**
      * Fetches terms for a global product attribute
@@ -992,101 +973,6 @@ class ProductDetailViewModel @AssistedInject constructor(
         }
     }
 
-    /**
-     * Returns the draft attribute matching the passed id and name
-     */
-    private fun getDraftAttribute(attributeId: Long, attributeName: String): ProductAttribute? {
-        return getProductDraftAttributes().firstOrNull {
-            it.id == attributeId && it.name == attributeName
-        }
-    }
-
-    /**
-     * Adds a new term to a the product draft attributes
-     */
-    fun addAttributeTermToDraft(attributeId: Long, attributeName: String, termName: String) {
-        val updatedTerms = ArrayList<String>()
-        var isVisible = ProductAttribute.DEFAULT_VISIBLE
-        var isVariation = ProductAttribute.DEFAULT_IS_VARIATION
-
-        // find this attribute in the draft attributes
-        getDraftAttribute(attributeId, attributeName)?.let { thisAttribute ->
-            // make sure this term doesn't already exist in this attribute
-            thisAttribute.terms.forEach {
-                if (it.equals(termName, ignoreCase = true)) {
-                    triggerEvent(ShowSnackbar(string.product_term_name_already_exists))
-                    return
-                }
-            }
-
-            // add its terms to our updated term list
-            updatedTerms.addAll(thisAttribute.terms)
-            isVisible = thisAttribute.isVisible
-            isVariation = thisAttribute.isVariation
-        }
-
-        // add the passed term to our updated term list
-        updatedTerms.add(termName)
-
-        // get the current draft attributes
-        val draftAttributes = getProductDraftAttributes()
-
-        // create an updated list without this attribute, then add a new one with the updated terms
-        ArrayList<ProductAttribute>().also { updatedAttributes ->
-            updatedAttributes.addAll(draftAttributes.filterNot { attribute ->
-                attribute.id == attributeId && attribute.name == attributeName
-            })
-
-            updatedAttributes.add(
-                ProductAttribute(
-                    id = attributeId,
-                    name = attributeName,
-                    terms = updatedTerms,
-                    isVisible = isVisible,
-                    isVariation = isVariation
-                )
-            )
-
-            updateProductDraft(attributes = updatedAttributes)
-        }
-    }
-
-    /**
-     * Removes a term from the product draft attributes
-     */
-    fun removeAttributeTermFromDraft(attributeId: Long, attributeName: String, termName: String) {
-        // find this attribute in the draft attributes
-        val thisAttribute = getDraftAttribute(attributeId, attributeName)
-        if (thisAttribute == null) {
-            // TODO
-            return
-        }
-
-        // created an updated list of terms without the passed one
-        val updatedTerms = ArrayList<String>().also { terms ->
-            terms.addAll(thisAttribute.terms.filterNot { it.equals(termName, ignoreCase = true) })
-        }
-
-        // get the current draft attributes
-        val draftAttributes = getProductDraftAttributes()
-
-        // create an updated list without this attribute, then add a new one with the updated terms
-        val updatedAttributes = ArrayList<ProductAttribute>().also {
-            draftAttributes.filter {
-                it.id != attributeId && it.name != attributeName
-            }
-        }.also {
-            it.add(ProductAttribute(
-                id = attributeId,
-                name = attributeName,
-                terms = updatedTerms,
-                isVisible = thisAttribute.isVisible,
-                isVariation = thisAttribute.isVariation
-            ))
-        }
-
-        updateProductDraft(attributes = updatedAttributes)
-    }
 
     /**
      * Saves any attribute changes to the backend
@@ -1147,51 +1033,6 @@ class ProductDetailViewModel @AssistedInject constructor(
 
     fun loadGlobalAttributes(): List<ProductGlobalAttribute> =
         productRepository.getGlobalAttributes()
-
-    /**
-     * Returns true if an attribute with this name is assigned to the product draft
-     */
-    private fun containsAttributeName(attributeName: String): Boolean {
-        viewState.productDraft?.attributes?.forEach {
-            if (it.name.equals(attributeName, ignoreCase = true)) {
-                return true
-            }
-        }
-        return false
-    }
-
-    /**
-     * Called from the attribute list when the user enters a new attribute
-     */
-    fun addLocalAttribute(attributeName: String) {
-        if (containsAttributeName(attributeName)) {
-            triggerEvent(ShowSnackbar(string.product_attribute_name_already_exists))
-            return
-        }
-
-        // get the list of current attributes
-        val attributes = ArrayList<ProductAttribute>()
-        viewState.productDraft?.attributes?.let {
-            attributes.addAll(it)
-        }
-
-        // add the new one to the list
-        attributes.add(
-            ProductAttribute(
-                id = 0L,
-                name = attributeName,
-                terms = emptyList(),
-                isVisible = ProductAttribute.DEFAULT_VISIBLE,
-                isVariation = ProductAttribute.DEFAULT_IS_VARIATION
-            )
-        )
-
-        // update the draft with the new list
-        updateProductDraft(attributes = attributes)
-
-        // take the user to the add attribute terms screen
-        triggerEvent(AddProductAttributeTerms(0L, attributeName))
-    }
 
     /**
      * Updates the product to the backend only if network is connected.

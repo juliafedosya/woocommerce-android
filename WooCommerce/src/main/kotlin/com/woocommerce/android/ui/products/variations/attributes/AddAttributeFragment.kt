@@ -17,6 +17,8 @@ import com.woocommerce.android.model.ProductAttribute
 import com.woocommerce.android.model.ProductGlobalAttribute
 import com.woocommerce.android.ui.products.BaseProductFragment
 import com.woocommerce.android.ui.products.ProductDetailViewModel.ProductExitEvent.ExitProductAddAttribute
+import com.woocommerce.android.ui.products.addLocalAttribute
+import com.woocommerce.android.ui.products.getProductDraftAttributes
 import com.woocommerce.android.widgets.AlignedDividerDecoration
 import com.woocommerce.android.widgets.SkeletonView
 import java.util.Locale

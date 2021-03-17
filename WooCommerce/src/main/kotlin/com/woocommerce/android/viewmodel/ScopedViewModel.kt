@@ -32,7 +32,7 @@ abstract class ScopedViewModel(
         job.cancel()
     }
 
-    protected fun triggerEvent(event: Event) {
+    fun triggerEvent(event: Event) {
         event.isHandled = false
         _event.value = event
     }
