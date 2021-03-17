@@ -15,6 +15,9 @@ import com.woocommerce.android.databinding.FragmentAttributeListBinding
 import com.woocommerce.android.model.ProductAttribute
 import com.woocommerce.android.ui.products.BaseProductFragment
 import com.woocommerce.android.ui.products.ProductDetailViewModel.ProductExitEvent.ExitProductAttributeList
+import com.woocommerce.android.ui.products.loadProductDraftAttributes
+import com.woocommerce.android.ui.products.onAddAttributeButtonClick
+import com.woocommerce.android.ui.products.onAttributeListItemClick
 import com.woocommerce.android.widgets.AlignedDividerDecoration
 
 class AttributeListFragment : BaseProductFragment(R.layout.fragment_attribute_list) {

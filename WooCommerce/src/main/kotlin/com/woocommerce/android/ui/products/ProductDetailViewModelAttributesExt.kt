@@ -2,10 +2,11 @@ package com.woocommerce.android.ui.products
 
 import com.woocommerce.android.R.string
 import com.woocommerce.android.model.ProductAttribute
+import com.woocommerce.android.model.ProductGlobalAttribute
+import com.woocommerce.android.ui.products.ProductNavigationTarget.AddProductAttribute
 import com.woocommerce.android.ui.products.ProductNavigationTarget.AddProductAttributeTerms
 import com.woocommerce.android.viewmodel.MultiLiveEvent.Event.ShowSnackbar
 import kotlinx.coroutines.launch
-import org.wordpress.android.fluxc.network.rest.wpcom.transactions.TransactionsRestClient.CreateShoppingCartResponse.Product
 
 /**
  * Returns the list of attributes assigned to the product
@@ -168,7 +169,6 @@ fun ProductDetailViewModel.addLocalAttribute(attributeName: String) {
     triggerEvent(AddProductAttributeTerms(0L, attributeName))
 }
 
-
 /**
  * Saves any attribute changes to the backend
  */
@@ -185,4 +185,65 @@ fun ProductDetailViewModel.saveAttributeChanges() {
     }
 }
 
+/**
+ * Loads the attributes assigned to the draft product, used by the attribute list fragment
+ */
+fun ProductDetailViewModel.loadProductDraftAttributes() {
+    _attributeList.value = getProductDraftAttributes()
+}
 
+/**
+ * Fetches terms for a global product attribute
+ */
+fun ProductDetailViewModel.fetchGlobalAttributeTerms(remoteAttributeId: Long) {
+    launch {
+        globalAttributesTermsViewState = globalAttributesTermsViewState.copy(isSkeletonShown = true)
+        _attributeTermsList.value = productRepository.fetchGlobalAttributeTerms(remoteAttributeId)
+        globalAttributesTermsViewState = globalAttributesTermsViewState.copy(isSkeletonShown = false)
+    }
+}
+
+/**
+ * Clears the global attribute terms
+ */
+fun ProductDetailViewModel.resetGlobalAttributeTerms() {
+    _attributeTermsList.value = emptyList()
+}
+
+/**
+ * User clicked an attribute in the attribute list fragment or the add attribute fragment
+ */
+fun ProductDetailViewModel.onAttributeListItemClick(attributeId: Long, attributeName: String) {
+    triggerEvent(AddProductAttributeTerms(attributeId, attributeName))
+}
+
+/**
+ * User tapped "Add attribute" on the attribute list fragment
+ */
+fun ProductDetailViewModel.onAddAttributeButtonClick() {
+    triggerEvent(AddProductAttribute)
+}
+
+fun ProductDetailViewModel.hasAttributeChanges() =
+    viewState.storedProduct?.hasAttributeChanges(viewState.productDraft) ?: false
+
+/**
+ * Used by the add attribute screen to fetch the list of store-wide product attributes
+ */
+fun ProductDetailViewModel.fetchGlobalAttributes() {
+    launch {
+        // load cached global attributes before fetching them, and only show skeleton if the
+        // list is still empty
+        _globalAttributeList.value = loadGlobalAttributes()
+        if (_globalAttributeList.value?.isEmpty() == true) {
+            globalAttributesViewState = globalAttributesViewState.copy(isSkeletonShown = true)
+        }
+
+        // now fetch from the backend
+        _globalAttributeList.value = productRepository.fetchGlobalAttributes()
+        globalAttributesViewState = globalAttributesViewState.copy(isSkeletonShown = false)
+    }
+}
+
+fun ProductDetailViewModel.loadGlobalAttributes(): List<ProductGlobalAttribute> =
+    productRepository.getGlobalAttributes()

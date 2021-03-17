@@ -55,8 +55,6 @@ import com.woocommerce.android.ui.products.ProductDetailViewModel.ProductExitEve
 import com.woocommerce.android.ui.products.ProductDetailViewModel.ProductExitEvent.ExitProductDownloads
 import com.woocommerce.android.ui.products.ProductDetailViewModel.ProductExitEvent.ExitProductTags
 import com.woocommerce.android.ui.products.ProductDetailViewModel.ProductExitEvent.ExitSettings
-import com.woocommerce.android.ui.products.ProductNavigationTarget.AddProductAttribute
-import com.woocommerce.android.ui.products.ProductNavigationTarget.AddProductAttributeTerms
 import com.woocommerce.android.ui.products.ProductNavigationTarget.AddProductCategory
 import com.woocommerce.android.ui.products.ProductNavigationTarget.AddProductDownloadableFile
 import com.woocommerce.android.ui.products.ProductNavigationTarget.ExitProduct
@@ -164,19 +162,19 @@ class ProductDetailViewModel @AssistedInject constructor(
     private val _addedProductTags = MutableLiveData<MutableList<ProductTag>>()
     val addedProductTags: MutableLiveData<MutableList<ProductTag>> = _addedProductTags
 
-    private val _attributeList = MutableLiveData<List<ProductAttribute>>()
+    internal val _attributeList = MutableLiveData<List<ProductAttribute>>()
     val attributeList: LiveData<List<ProductAttribute>> = _attributeList
 
     final val globalAttributeTermsViewStateData = LiveDataDelegate(savedState, GlobalAttributesTermsViewState())
-    private var globalAttributesTermsViewState by globalAttributeTermsViewStateData
+    internal var globalAttributesTermsViewState by globalAttributeTermsViewStateData
 
-    private val _attributeTermsList = MutableLiveData<List<ProductAttributeTerm>>()
+    internal val _attributeTermsList = MutableLiveData<List<ProductAttributeTerm>>()
     val attributeTermsList: LiveData<List<ProductAttributeTerm>> = _attributeTermsList
 
     final val globalAttributeViewStateData = LiveDataDelegate(savedState, GlobalAttributesViewState())
-    private var globalAttributesViewState by globalAttributeViewStateData
+    internal var globalAttributesViewState by globalAttributeViewStateData
 
-    private val _globalAttributeList = MutableLiveData<List<ProductGlobalAttribute>>()
+    internal val _globalAttributeList = MutableLiveData<List<ProductGlobalAttribute>>()
     val globalAttributeList: LiveData<List<ProductGlobalAttribute>> = _globalAttributeList
 
     private val _productDetailCards = MutableLiveData<List<ProductPropertyCard>>()
@@ -953,68 +951,6 @@ class ProductDetailViewModel @AssistedInject constructor(
             viewState.copy(uploadingImageUris = emptyList())
         }
     }
-
-    /**
-     * Loads the attributes assigned to the draft product, used by the attribute list fragment
-     */
-    fun loadProductDraftAttributes() {
-        _attributeList.value = getProductDraftAttributes()
-    }
-
-    /**
-     * Fetches terms for a global product attribute
-     */
-    fun fetchGlobalAttributeTerms(remoteAttributeId: Long) {
-        launch {
-            globalAttributesTermsViewState = globalAttributesTermsViewState.copy(isSkeletonShown = true)
-            _attributeTermsList.value = productRepository.fetchGlobalAttributeTerms(remoteAttributeId)
-            globalAttributesTermsViewState = globalAttributesTermsViewState.copy(isSkeletonShown = false)
-        }
-    }
-
-    /**
-     * Clears the global attribute terms
-     */
-    fun resetGlobalAttributeTerms() {
-        _attributeTermsList.value = emptyList()
-    }
-
-    /**
-     * User clicked an attribute in the attribute list fragment or the add attribute fragment
-     */
-    fun onAttributeListItemClick(attributeId: Long, attributeName: String) {
-        triggerEvent(AddProductAttributeTerms(attributeId, attributeName))
-    }
-
-    /**
-     * User tapped "Add attribute" on the attribute list fragment
-     */
-    fun onAddAttributeButtonClick() {
-        triggerEvent(AddProductAttribute)
-    }
-
-    fun hasAttributeChanges() = viewState.storedProduct?.hasAttributeChanges(viewState.productDraft) ?: false
-
-    /**
-     * Used by the add attribute screen to fetch the list of store-wide product attributes
-     */
-    fun fetchGlobalAttributes() {
-        launch {
-            // load cached global attributes before fetching them, and only show skeleton if the
-            // list is still empty
-            _globalAttributeList.value = loadGlobalAttributes()
-            if (_globalAttributeList.value?.isEmpty() == true) {
-                globalAttributesViewState = globalAttributesViewState.copy(isSkeletonShown = true)
-            }
-
-            // now fetch from the backend
-            _globalAttributeList.value = productRepository.fetchGlobalAttributes()
-            globalAttributesViewState = globalAttributesViewState.copy(isSkeletonShown = false)
-        }
-    }
-
-    fun loadGlobalAttributes(): List<ProductGlobalAttribute> =
-        productRepository.getGlobalAttributes()
 
     /**
      * Updates the product to the backend only if network is connected.
