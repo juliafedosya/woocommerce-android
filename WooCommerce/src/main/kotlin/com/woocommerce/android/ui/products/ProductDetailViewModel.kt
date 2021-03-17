@@ -109,7 +109,7 @@ class ProductDetailViewModel @AssistedInject constructor(
     @Assisted savedState: SavedStateWithArgs,
     dispatchers: CoroutineDispatchers,
     parameterRepository: ParameterRepository,
-    private val productRepository: ProductDetailRepository,
+    internal val productRepository: ProductDetailRepository,
     private val networkStatus: NetworkStatus,
     private val currencyFormatter: CurrencyFormatter,
     private val resources: ResourceProvider,
@@ -961,7 +961,6 @@ class ProductDetailViewModel @AssistedInject constructor(
         _attributeList.value = getProductDraftAttributes()
     }
 
-
     /**
      * Fetches terms for a global product attribute
      */
@@ -970,23 +969,6 @@ class ProductDetailViewModel @AssistedInject constructor(
             globalAttributesTermsViewState = globalAttributesTermsViewState.copy(isSkeletonShown = true)
             _attributeTermsList.value = productRepository.fetchGlobalAttributeTerms(remoteAttributeId)
             globalAttributesTermsViewState = globalAttributesTermsViewState.copy(isSkeletonShown = false)
-        }
-    }
-
-
-    /**
-     * Saves any attribute changes to the backend
-     */
-    fun saveAttributeChanges() {
-        if (hasAttributeChanges() && checkConnection()) {
-            launch {
-                viewState.productDraft?.attributes?.let { attributes ->
-                    val result = productRepository.updateProductAttributes(getRemoteProductId(), attributes)
-                    if (!result) {
-                        triggerEvent(ShowSnackbar(string.product_attributes_error_saving))
-                    }
-                }
-            }
         }
     }
 

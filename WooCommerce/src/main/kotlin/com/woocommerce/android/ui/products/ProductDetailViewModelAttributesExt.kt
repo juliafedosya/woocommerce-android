@@ -4,6 +4,8 @@ import com.woocommerce.android.R.string
 import com.woocommerce.android.model.ProductAttribute
 import com.woocommerce.android.ui.products.ProductNavigationTarget.AddProductAttributeTerms
 import com.woocommerce.android.viewmodel.MultiLiveEvent.Event.ShowSnackbar
+import kotlinx.coroutines.launch
+import org.wordpress.android.fluxc.network.rest.wpcom.transactions.TransactionsRestClient.CreateShoppingCartResponse.Product
 
 /**
  * Returns the list of attributes assigned to the product
@@ -165,4 +167,22 @@ fun ProductDetailViewModel.addLocalAttribute(attributeName: String) {
     // take the user to the add attribute terms screen
     triggerEvent(AddProductAttributeTerms(0L, attributeName))
 }
+
+
+/**
+ * Saves any attribute changes to the backend
+ */
+fun ProductDetailViewModel.saveAttributeChanges() {
+    if (hasAttributeChanges() && checkConnection()) {
+        launch {
+            viewState.productDraft?.attributes?.let { attributes ->
+                val result = productRepository.updateProductAttributes(getRemoteProductId(), attributes)
+                if (!result) {
+                    triggerEvent(ShowSnackbar(string.product_attributes_error_saving))
+                }
+            }
+        }
+    }
+}
+
 
