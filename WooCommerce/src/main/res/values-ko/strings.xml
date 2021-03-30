@@ -23,7 +23,6 @@ Language: ko_KR
     <string name="shipping_label_shipping_method_local_pickup">방문 수령</string>
     <string name="shipping_label_shipping_method_flat_rate">고정 요금</string>
     <string name="shipping_label_shipping_carrier_flat_fee_banner_message">배송에 대해 고객이 결제한 %1$s(%2$s)</string>
-    <string name="shipping_label_woo_discount_bottomsheet_message" formatted="false">WooCommerce를 통해 배송 레이블을 구매하면 우체국 요금보다 5~40% 할인됩니다.</string>
     <string name="shipping_label_woo_discount_bottomsheet_title">WooCommerce  서비스 할인이란?</string>
     <string name="shipping_label_shipping_carrier_rates_generic_error">배송 옵션을 로드하는 중 오류가 발생했습니다.</string>
     <string name="shipping_label_shipping_carrier_rates_unavailable">선택한 주소와 패키지에 대한 배송 옵션이 없습니다.</string>
@@ -261,19 +260,15 @@ Language: ko_KR
     <string name="feedback_product_give_feedback_button_text">피드백 보내기</string>
     <string name="product_detail_publish_product_success">제품 공개됨</string>
     <string name="product_detail_publish_product_error">제품을 공개하는 중 오류 발생</string>
-    <string name="product_publish_dialog_message">\@string/product_update_dialog_message</string>
     <string name="product_publish_dialog_title">제품 공개 중</string>
     <string name="product_add_tool_bar_menu_button_done">공개</string>
     <string name="product_add_tool_bar_title">새 제품</string>
-    <string name="product_add_type_external_desc">\@string/product_type_external_desc</string>
-    <string name="product_add_type_grouped_desc">\@string/product_type_grouped_desc</string>
     <string name="product_add_type_variable_desc">색상이나 크기와 같은 선택사항이 있는 제품</string>
     <string name="product_add_type_simple_desc">유니크한 아이템</string>
     <string name="product_add_type_external">외부 상품</string>
     <string name="product_add_type_grouped">그룹 상품</string>
     <string name="product_add_type_variable">옵션 상품</string>
     <string name="product_add_type_simple">단순 상품</string>
-    <string name="product_add_type_list_header">\@string/product_type_list_header</string>
     <string name="product_images_image_limit_warning">제품 변형당 하나의 사진만 표시할 수 있습니다.</string>
     <string name="product_replace_photo">사진 바꾸기</string>
     <string name="product_add_photo">사진 추가</string>

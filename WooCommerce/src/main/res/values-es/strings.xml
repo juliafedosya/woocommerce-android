@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Translation-Revision-Date: 2021-03-17 13:54:04+0000
+Translation-Revision-Date: 2021-03-30 14:54:04+0000
 Plural-Forms: nplurals=2; plural=n != 1;
 Generator: GlotPress/2.4.0-alpha
 Language: es
 -->
 <resources>
+    <string name="product_attributes_error_saving">Se ha producido un error al guardar tus atributos</string>
     <string name="shipping_label_payments_cant_edit_warning">Solo el propietario del sitio puede gestionar los métodos de pago de la etiqueta de envío. Contacta con el propietario de la tienda %1$s (%2$s) para gestionar los métodos de pago.</string>
     <string name="product_detail_add_variations">Añadir variaciones</string>
     <string name="product_variant_list_empty_action">Añadir variación</string>
@@ -23,7 +24,7 @@ Language: es
     <string name="shipping_label_shipping_method_local_pickup">Recogida local</string>
     <string name="shipping_label_shipping_method_flat_rate">Precio fijo</string>
     <string name="shipping_label_shipping_carrier_flat_fee_banner_message">El cliente ha pagado %1$s (%2$s) por el envío</string>
-    <string name="shipping_label_woo_discount_bottomsheet_message" formatted="false">Comprar etiquetas de envío con WooCommerce te permite obtener entre un 5 % y un 40 % de descuento en comparación con las tarifas de las oficinas de correos.</string>
+    <string name="shipping_label_woo_discount_bottomsheet_message">Al comprar etiquetas de envío con WooCommerce, pagas entre un 5 y un 40 % menos que con las tarifas de las oficinas de correos.</string>
     <string name="shipping_label_woo_discount_bottomsheet_title">¿En qué consiste el descuento de WooCommerce Services?</string>
     <string name="shipping_label_shipping_carrier_rates_generic_error">Se ha producido un error al cargar las opciones de envío</string>
     <string name="shipping_label_shipping_carrier_rates_unavailable">No hay opciones de envío para las direcciones y los paquetes seleccionados.</string>
@@ -179,6 +180,7 @@ Language: es
     <string name="print_shipping_label_info_step_4">Quizá tengas que &lt;b>configurar la impresión por wifi directamente en la impresora.&lt;/b>Comprueba que el firmware de la impresora está actualizado y consulta las instrucciones en la documentación de tu impresora.</string>
     <string name="print_shipping_label_info_step_3">Selecciona el &lt;b>servicio de impresión predeterminado&lt;/b> del dispositivo o instala la &lt;b>aplicación nativa de la impresora&lt;/b> (esta acción debería ser la opción recomendada)</string>
     <string name="print_shipping_label_info_step_1">Comprueba que la impresora y el dispositivo estén conectados a las &lt;b>mismas redes wifi&lt;/b></string>
+    <string name="settings_enable_product_adding_teaser_message">Prueba la creación de nuevos productos sencillos, relacionados y agrupados mientras preparamos el lanzamiento</string>
     <string name="bottom_sheet_linked_products_desc">Aumenta las ventas con las ventas dirigidas y cruzadas</string>
     <string name="edit_products_button">Editar productos</string>
     <string name="add_products_button">Añadir productos</string>
@@ -261,19 +263,15 @@ Language: es
     <string name="feedback_product_give_feedback_button_text">Enviar comentarios</string>
     <string name="product_detail_publish_product_success">Producto publicado</string>
     <string name="product_detail_publish_product_error">Error al publicar el producto</string>
-    <string name="product_publish_dialog_message">\@string/product_update_dialog_message</string>
     <string name="product_publish_dialog_title">Publicando el producto</string>
     <string name="product_add_tool_bar_menu_button_done">PUBLICAR</string>
     <string name="product_add_tool_bar_title">Nuevo producto</string>
-    <string name="product_add_type_external_desc">\@string/product_type_external_desc</string>
-    <string name="product_add_type_grouped_desc">\@string/product_type_grouped_desc</string>
     <string name="product_add_type_variable_desc">Un producto con variaciones, como el color o el tamaño</string>
     <string name="product_add_type_simple_desc">Un único artículo que vender</string>
     <string name="product_add_type_external">Producto externo</string>
     <string name="product_add_type_grouped">Producto agrupado</string>
     <string name="product_add_type_variable">Producto variable</string>
     <string name="product_add_type_simple">Producto simple</string>
-    <string name="product_add_type_list_header">\@string/product_type_list_header</string>
     <string name="product_images_image_limit_warning">Solo se puede mostrar una foto por cada variación de producto</string>
     <string name="product_replace_photo">Sustituir foto</string>
     <string name="product_add_photo">Añadir foto</string>

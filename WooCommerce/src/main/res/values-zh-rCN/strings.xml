@@ -23,7 +23,6 @@ Language: zh_CN
     <string name="shipping_label_shipping_method_local_pickup">本地自提</string>
     <string name="shipping_label_shipping_method_flat_rate">统一费率</string>
     <string name="shipping_label_shipping_carrier_flat_fee_banner_message">客户支付了 %1$s (%2$s) 用于配送</string>
-    <string name="shipping_label_woo_discount_bottomsheet_message" formatted="false">相比邮局的收费标准，使用 WooCommerce 购买配送标签可以获得 5% 至 40% 的优惠。</string>
     <string name="shipping_label_woo_discount_bottomsheet_title">WooCommerce  服务折扣是什么？</string>
     <string name="shipping_label_shipping_carrier_rates_generic_error">加载配送选项时出现错误</string>
     <string name="shipping_label_shipping_carrier_rates_unavailable">所选地址和包裹没有配送选项。</string>
@@ -261,19 +260,15 @@ Language: zh_CN
     <string name="feedback_product_give_feedback_button_text">提供反馈</string>
     <string name="product_detail_publish_product_success">产品已发布</string>
     <string name="product_detail_publish_product_error">发布产品时出错</string>
-    <string name="product_publish_dialog_message">\@string/product_update_dialog_message</string>
     <string name="product_publish_dialog_title">正在发布产品</string>
     <string name="product_add_tool_bar_menu_button_done">发布</string>
     <string name="product_add_tool_bar_title">新产品</string>
-    <string name="product_add_type_external_desc">\@string/product_type_external_desc</string>
-    <string name="product_add_type_grouped_desc">\@string/product_type_grouped_desc</string>
     <string name="product_add_type_variable_desc">包含颜色或尺寸等参数的变体</string>
     <string name="product_add_type_simple_desc">要销售的独特商品</string>
     <string name="product_add_type_external">外部产品</string>
     <string name="product_add_type_grouped">分组产品</string>
     <string name="product_add_type_variable">可变产品</string>
     <string name="product_add_type_simple">单个产品</string>
-    <string name="product_add_type_list_header">\@string/product_type_list_header</string>
     <string name="product_images_image_limit_warning">每个产品变体只能显示一张照片</string>
     <string name="product_replace_photo">替换照片</string>
     <string name="product_add_photo">添加照片</string>

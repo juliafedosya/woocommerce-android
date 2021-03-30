@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Translation-Revision-Date: 2021-03-16 14:54:04+0000
+Translation-Revision-Date: 2021-03-30 11:54:04+0000
 Plural-Forms: nplurals=2; plural=n != 1;
 Generator: GlotPress/2.4.0-alpha
 Language: sv_SE
 -->
 <resources>
+    <string name="product_attributes_error_saving">Fel när dina attribut sparades</string>
     <string name="shipping_label_payments_cant_edit_warning">Det är bara webbplatsens ägare som kan hantera betalningsmetoderna för fraktetiketter. Kontakta butiksägaren %1$s (%2$s) för att hantera betalningsmetoder.</string>
     <string name="product_detail_add_variations">Lägg till variationer</string>
     <string name="product_variant_list_empty_action">Lägg till variation</string>
@@ -23,7 +24,7 @@ Language: sv_SE
     <string name="shipping_label_shipping_method_local_pickup">Hämta själv</string>
     <string name="shipping_label_shipping_method_flat_rate">Fast pris</string>
     <string name="shipping_label_shipping_carrier_flat_fee_banner_message">Kunden betalade %1$s (%2$s) för frakt</string>
-    <string name="shipping_label_woo_discount_bottomsheet_message" formatted="false">När du köper fraktetiketter med WooCommerce får du 5 % till 40 % rabatt jämfört med vad de kostar på postkontor.</string>
+    <string name="shipping_label_woo_discount_bottomsheet_message">När du köper fraktetiketter med WooCommerce, får du 5 % till 40 % i rabatt jämfört med postkontoret.</string>
     <string name="shipping_label_woo_discount_bottomsheet_title">Vad innebär rabatt på  WooCommerce-tjänster?</string>
     <string name="shipping_label_shipping_carrier_rates_generic_error">Det gick inte att hämta leveransalternativen</string>
     <string name="shipping_label_shipping_carrier_rates_unavailable">Det finns inga leveransalternativ för den valda adressen och de valda paketen</string>
@@ -262,19 +263,15 @@ Language: sv_SE
     <string name="feedback_product_give_feedback_button_text">Ge feedback</string>
     <string name="product_detail_publish_product_success">Produkt publicerad</string>
     <string name="product_detail_publish_product_error">Fel vid publicering av produkt</string>
-    <string name="product_publish_dialog_message">\@string/product_update_dialog_message</string>
     <string name="product_publish_dialog_title">Publicerar produkt</string>
     <string name="product_add_tool_bar_menu_button_done">PUBLICERA</string>
     <string name="product_add_tool_bar_title">Ny produkt</string>
-    <string name="product_add_type_external_desc">\@string/product_type_external_desc</string>
-    <string name="product_add_type_grouped_desc">\@string/product_type_grouped_desc</string>
     <string name="product_add_type_variable_desc">En produkt med variationer som färg eller storlek</string>
     <string name="product_add_type_simple_desc">En unik artikel att sälja</string>
     <string name="product_add_type_external">Extern produkt</string>
     <string name="product_add_type_grouped">Grupperad produkt</string>
     <string name="product_add_type_variable">Variabel produkt</string>
     <string name="product_add_type_simple">Enkel produkt</string>
-    <string name="product_add_type_list_header">\@string/product_type_list_header</string>
     <string name="product_images_image_limit_warning">Endast ett foto kan visas per produktvariant</string>
     <string name="product_replace_photo">Byt ut foto</string>
     <string name="product_add_photo">Lägg till foto</string>

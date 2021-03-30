@@ -23,7 +23,6 @@ Language: it
     <string name="shipping_label_shipping_method_local_pickup">Ritiro in sede</string>
     <string name="shipping_label_shipping_method_flat_rate">Tariffa unica</string>
     <string name="shipping_label_shipping_carrier_flat_fee_banner_message">Il cliente ha pagato %1$s (%2$s) per la spedizione</string>
-    <string name="shipping_label_woo_discount_bottomsheet_message" formatted="false">Quando acquisti le etichette di spedizione tramite WooCommerce, ottieni dal 5% al 40% di sconto rispetto alle tariffe degli uffici postali.</string>
     <string name="shipping_label_woo_discount_bottomsheet_title">Cos\'è lo sconto di WooCommerce  Services?</string>
     <string name="shipping_label_shipping_carrier_rates_generic_error">Si è verificato un errore durante il caricamento delle opzioni di spedizione</string>
     <string name="shipping_label_shipping_carrier_rates_unavailable">Non sono presenti opzioni di spedizione per l\'indirizzo e i pacchetti selezionati</string>
@@ -261,19 +260,15 @@ Language: it
     <string name="feedback_product_give_feedback_button_text">Lascia il feedback</string>
     <string name="product_detail_publish_product_success">Prodotto pubblicato</string>
     <string name="product_detail_publish_product_error">Errore durante la pubblicazione del prodotto</string>
-    <string name="product_publish_dialog_message">\@string/product_update_dialog_message</string>
     <string name="product_publish_dialog_title">Pubblicazione del prodotto…</string>
     <string name="product_add_tool_bar_menu_button_done">PUBBLICAZIONE</string>
     <string name="product_add_tool_bar_title">Nuovo prodotto</string>
-    <string name="product_add_type_external_desc">\@string/product_type_external_desc</string>
-    <string name="product_add_type_grouped_desc">\@string/product_type_grouped_desc</string>
     <string name="product_add_type_variable_desc">Un prodotto con varianti come colore o misura</string>
     <string name="product_add_type_simple_desc">Un articolo unico da vendere</string>
     <string name="product_add_type_external">Prodotto esterno</string>
     <string name="product_add_type_grouped">Prodotto raggruppato</string>
     <string name="product_add_type_variable">Prodotto variabile</string>
     <string name="product_add_type_simple">Prodotto semplice</string>
-    <string name="product_add_type_list_header">\@string/product_type_list_header</string>
     <string name="product_images_image_limit_warning">Può essere visualizzata solo una foto per variante di prodotto</string>
     <string name="product_replace_photo">Sostituisci foto</string>
     <string name="product_add_photo">Aggiungi foto</string>

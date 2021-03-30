@@ -23,7 +23,6 @@ Language: he_IL
     <string name="shipping_label_shipping_method_local_pickup">איסוף מקומי</string>
     <string name="shipping_label_shipping_method_flat_rate">תעריף קבוע</string>
     <string name="shipping_label_shipping_carrier_flat_fee_banner_message">הלקוח שילם ⁦%1$s⁩ (⁦%2$s⁩) על משלוח</string>
-    <string name="shipping_label_woo_discount_bottomsheet_message" formatted="false">כאשר רוכשים תוויות משלוח עם WooCommerce, אפשר לחסוך בין 5% ל-40% לעומת תעריפי המשלוח דרך הדואר.</string>
     <string name="shipping_label_woo_discount_bottomsheet_title">מהי  הנחת השירותים של WooCommerce?</string>
     <string name="shipping_label_shipping_carrier_rates_generic_error">אירעה שגיאה בטעינת אפשרויות המשלוח</string>
     <string name="shipping_label_shipping_carrier_rates_unavailable">אין אפשרויות משלוח לכתובת ולחבילות שבחרת</string>
@@ -261,19 +260,15 @@ Language: he_IL
     <string name="feedback_product_give_feedback_button_text">להעניק משוב</string>
     <string name="product_detail_publish_product_success">המוצר פורסם</string>
     <string name="product_detail_publish_product_error">שגיאה בפרסום המוצר</string>
-    <string name="product_publish_dialog_message">\@string/product_update_dialog_message</string>
     <string name="product_publish_dialog_title">מפרסם את המוצר שלך…</string>
     <string name="product_add_tool_bar_menu_button_done">פרסום</string>
     <string name="product_add_tool_bar_title">מוצר חדש</string>
-    <string name="product_add_type_external_desc">\@string/product_type_external_desc</string>
-    <string name="product_add_type_grouped_desc">\@string/product_type_grouped_desc</string>
     <string name="product_add_type_variable_desc">מוצר עם סוגים כגון צבע או מידה</string>
     <string name="product_add_type_simple_desc">פריט ייחודי למכירה</string>
     <string name="product_add_type_external">מוצר חיצוני</string>
     <string name="product_add_type_grouped">קבוצת מוצרים</string>
     <string name="product_add_type_variable">מוצר עם וריאציות</string>
     <string name="product_add_type_simple">מוצר רגיל</string>
-    <string name="product_add_type_list_header">\@string/product_type_list_header</string>
     <string name="product_images_image_limit_warning">ניתן להציג רק תמונה אחת לכל סוג מוצר</string>
     <string name="product_replace_photo">להחליף את התמונה</string>
     <string name="product_add_photo">להוסיף תמונה</string>

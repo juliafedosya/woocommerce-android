@@ -23,7 +23,6 @@ Language: ru
     <string name="shipping_label_shipping_method_local_pickup">Самовывоз</string>
     <string name="shipping_label_shipping_method_flat_rate">Единая ставка</string>
     <string name="shipping_label_shipping_carrier_flat_fee_banner_message">Клиент оплатил %1$s (%2$s) за доставку.</string>
-    <string name="shipping_label_woo_discount_bottomsheet_message" formatted="false">При покупке транспортных этикеток через WooCommerce вы выиграете от 5 до 40 % по сравнению с тарифами почты.</string>
     <string name="shipping_label_woo_discount_bottomsheet_title">Что такое скидка WooCommerce  Services?</string>
     <string name="shipping_label_shipping_carrier_rates_generic_error">При загрузке вариантов доставки произошла ошибка.</string>
     <string name="shipping_label_shipping_carrier_rates_unavailable">Для выбранного адреса и грузов варианты доставки отсутствуют.</string>
@@ -261,19 +260,15 @@ Language: ru
     <string name="feedback_product_give_feedback_button_text">Оставить отзыв</string>
     <string name="product_detail_publish_product_success">Товар опубликован</string>
     <string name="product_detail_publish_product_error">Не удалось опубликовать товар</string>
-    <string name="product_publish_dialog_message">\@string/product_update_dialog_message</string>
     <string name="product_publish_dialog_title">Публикация товара</string>
     <string name="product_add_tool_bar_menu_button_done">ОПУБЛИКОВАТЬ</string>
     <string name="product_add_tool_bar_title">Новый товар</string>
-    <string name="product_add_type_external_desc">\@string/product_type_external_desc</string>
-    <string name="product_add_type_grouped_desc">\@string/product_type_grouped_desc</string>
     <string name="product_add_type_variable_desc">Товар с вариантами исполнения, например по цвету или размеру</string>
     <string name="product_add_type_simple_desc">Уникальная позиция для продажи</string>
     <string name="product_add_type_external">Внешний товар</string>
     <string name="product_add_type_grouped">Сгруппированный товар</string>
     <string name="product_add_type_variable">Вариативный товар</string>
     <string name="product_add_type_simple">Простой товар</string>
-    <string name="product_add_type_list_header">\@string/product_type_list_header</string>
     <string name="product_images_image_limit_warning">Для каждого варианта товара можно добавить только одну фотографию</string>
     <string name="product_replace_photo">Заменить фотографию</string>
     <string name="product_add_photo">Добавить фотографию</string>

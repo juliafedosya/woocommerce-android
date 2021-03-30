@@ -23,7 +23,6 @@ Language: nl
     <string name="shipping_label_shipping_method_local_pickup">Lokaal afhalen</string>
     <string name="shipping_label_shipping_method_flat_rate">Vast tarief</string>
     <string name="shipping_label_shipping_carrier_flat_fee_banner_message">Klant heeft %1$s (%2$s) betaald aan verzendkosten</string>
-    <string name="shipping_label_woo_discount_bottomsheet_message" formatted="false">Wanneer je verzendlabels koopt met WooCommerce krijg je 5 tot 40% korting ten opzichte van de tarieven van postkantoren.</string>
     <string name="shipping_label_woo_discount_bottomsheet_title">Wat houdt korting op WooCommerce  Services in?</string>
     <string name="shipping_label_shipping_carrier_rates_generic_error">Er is een fout opgetreden bij het laden van de verzendopties</string>
     <string name="shipping_label_shipping_carrier_rates_unavailable">Er zijn geen verzendopties voor het geselecteerde adres en pakketjes</string>
@@ -261,19 +260,15 @@ Language: nl
     <string name="feedback_product_give_feedback_button_text">Geef feedback</string>
     <string name="product_detail_publish_product_success">Product gepubliceerd</string>
     <string name="product_detail_publish_product_error">Fout bij publiceren van product</string>
-    <string name="product_publish_dialog_message">\@string/product_update_dialog_message</string>
     <string name="product_publish_dialog_title">Product wordt gepubliceerd</string>
     <string name="product_add_tool_bar_menu_button_done">PUBLICEREN</string>
     <string name="product_add_tool_bar_title">Nieuw product</string>
-    <string name="product_add_type_external_desc">\@string/product_type_external_desc</string>
-    <string name="product_add_type_grouped_desc">\@string/product_type_grouped_desc</string>
     <string name="product_add_type_variable_desc">Een product met variaties zoals kleur of maat</string>
     <string name="product_add_type_simple_desc">Een uniek artikel om te verkopen</string>
     <string name="product_add_type_external">Extern product</string>
     <string name="product_add_type_grouped">Gegroepeerd product</string>
     <string name="product_add_type_variable">Variabel product</string>
     <string name="product_add_type_simple">Simpel product</string>
-    <string name="product_add_type_list_header">\@string/product_type_list_header</string>
     <string name="product_images_image_limit_warning">Er kan slechts één foto worden weergegeven per productvariatie</string>
     <string name="product_replace_photo">Foto vervangen</string>
     <string name="product_add_photo">Foto toevoegen</string>

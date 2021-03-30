@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Translation-Revision-Date: 2021-03-18 10:54:04+0000
+Translation-Revision-Date: 2021-03-24 09:54:05+0000
 Plural-Forms: nplurals=1; plural=0;
 Generator: GlotPress/2.4.0-alpha
 Language: ja_JP
@@ -23,7 +23,6 @@ Language: ja_JP
     <string name="shipping_label_shipping_method_local_pickup">店頭渡し</string>
     <string name="shipping_label_shipping_method_flat_rate">定額送料</string>
     <string name="shipping_label_shipping_carrier_flat_fee_banner_message">配送料としてお客様から %1$s (%2$s) の支払いがありました</string>
-    <string name="shipping_label_woo_discount_bottomsheet_message" formatted="false">WooCommerce で配送ラベルを購入すると、郵便局の価格と比べ 5%～40% お得です</string>
     <string name="shipping_label_woo_discount_bottomsheet_title">WooCommerce  サービスの割引はどのくらいですか ?</string>
     <string name="shipping_label_shipping_carrier_rates_generic_error">配送オプションの読み込みでエラーが発生しました</string>
     <string name="shipping_label_shipping_carrier_rates_unavailable">選択したアドレスと荷物に対応した配送オプションがありません</string>
@@ -179,6 +178,7 @@ Language: ja_JP
     <string name="print_shipping_label_info_step_4">&lt;b>プリンター自体で WiFi 印刷を直接設定する必要があるようです。&lt;/b>プリンターのファームウェアが最新であることを確認し、プリンターの説明書をお読みになることをおすすめします。</string>
     <string name="print_shipping_label_info_step_3">端末の&lt;b>デフォルトの印刷サービス&lt;/b>を選択するか、&lt;b>プリンターのブランドのアプリ&lt;/b>をインストールできます (これは推奨オプションとして表示)</string>
     <string name="print_shipping_label_info_step_1">お使いのプリンターと端末が&lt;b>同じ WiFi ネットワーク&lt;/b>に接続されていることを確認してください</string>
+    <string name="settings_enable_product_adding_teaser_message">リリースの準備ができ次第、新しいリンクおよびグループ化された商品の作成機能をテストしてください</string>
     <string name="bottom_sheet_linked_products_desc">アップセルとクロスセルで販売を伸ばしましょう</string>
     <string name="edit_products_button">商品を編集</string>
     <string name="add_products_button">商品追加</string>
@@ -261,19 +261,15 @@ Language: ja_JP
     <string name="feedback_product_give_feedback_button_text">フィードバックを残す</string>
     <string name="product_detail_publish_product_success">公開済みの商品</string>
     <string name="product_detail_publish_product_error">商品の公開中にエラーが発生しました</string>
-    <string name="product_publish_dialog_message">\@string/product_update_dialog_message</string>
     <string name="product_publish_dialog_title">商品を公開しています</string>
     <string name="product_add_tool_bar_menu_button_done">公開</string>
     <string name="product_add_tool_bar_title">新商品</string>
-    <string name="product_add_type_external_desc">\@string/product_type_external_desc</string>
-    <string name="product_add_type_grouped_desc">\@string/product_type_grouped_desc</string>
     <string name="product_add_type_variable_desc">色やサイズのバリエーションがある商品</string>
     <string name="product_add_type_simple_desc">ユニークな商品の販売</string>
     <string name="product_add_type_external">外部商品</string>
     <string name="product_add_type_grouped">グループ化された商品</string>
     <string name="product_add_type_variable">バリエーションのある商品</string>
     <string name="product_add_type_simple">基本的な商品</string>
-    <string name="product_add_type_list_header">\@string/product_type_list_header</string>
     <string name="product_images_image_limit_warning">商品1種類につき、表示できる写真は1点のみです</string>
     <string name="product_replace_photo">写真を置換</string>
     <string name="product_add_photo">写真を追加</string>

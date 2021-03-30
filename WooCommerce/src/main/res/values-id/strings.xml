@@ -23,7 +23,6 @@ Language: id
     <string name="shipping_label_shipping_method_local_pickup">Pengambilan lokal</string>
     <string name="shipping_label_shipping_method_flat_rate">Tarif tetap</string>
     <string name="shipping_label_shipping_carrier_flat_fee_banner_message">Pelanggan membayar %1$s (%2$s) untuk pengiriman</string>
-    <string name="shipping_label_woo_discount_bottomsheet_message" formatted="false">Ketika membeli label pengiriman dengan WooCommerce, Anda mendapatkan diskon 5% hingga 40% dibandingkan dengan tarif kantor pos.</string>
     <string name="shipping_label_woo_discount_bottomsheet_title">Apa itu diskon WooCommerce  Services?</string>
     <string name="shipping_label_shipping_carrier_rates_generic_error">Terjadi error saat memuat pilihan pengiriman</string>
     <string name="shipping_label_shipping_carrier_rates_unavailable">Tidak ada pilihan pengiriman untuk alamat dan paket yang dipilih</string>
@@ -261,19 +260,15 @@ Language: id
     <string name="feedback_product_give_feedback_button_text">Berikan Masukan</string>
     <string name="product_detail_publish_product_success">Produk dipublikasikan</string>
     <string name="product_detail_publish_product_error">Terjadi error saat memublikasikan produk</string>
-    <string name="product_publish_dialog_message">\@string/product_update_dialog_message</string>
     <string name="product_publish_dialog_title">Memublikasikan produk</string>
     <string name="product_add_tool_bar_menu_button_done">PUBLIKASIKAN</string>
     <string name="product_add_tool_bar_title">Produk Baru</string>
-    <string name="product_add_type_external_desc">\@string/product_type_external_desc</string>
-    <string name="product_add_type_grouped_desc">\@string/product_type_grouped_desc</string>
     <string name="product_add_type_variable_desc">Produk dengan variasi seperti warna atau ukuran</string>
     <string name="product_add_type_simple_desc">Item khusus yang akan dijual</string>
     <string name="product_add_type_external">Produk eksternal</string>
     <string name="product_add_type_grouped">Produk dikelompokkan</string>
     <string name="product_add_type_variable">Produk variabel</string>
     <string name="product_add_type_simple">Produk simpel</string>
-    <string name="product_add_type_list_header">\@string/product_type_list_header</string>
     <string name="product_images_image_limit_warning">Hanya satu foto per variasi produk dapat ditampilkan</string>
     <string name="product_replace_photo">Ganti foto</string>
     <string name="product_add_photo">Tambahkan foto</string>

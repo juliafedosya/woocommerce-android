@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Translation-Revision-Date: 2021-03-17 11:54:04+0000
+Translation-Revision-Date: 2021-03-30 11:54:04+0000
 Plural-Forms: nplurals=2; plural=(n > 1);
 Generator: GlotPress/2.4.0-alpha
 Language: tr
 -->
 <resources>
+    <string name="product_attributes_error_saving">Özellikleriniz kaydedilirken hata oluştu</string>
     <string name="shipping_label_payments_cant_edit_warning">Gönderim etiketi ödeme yöntemlerini yalnızca site sahibi yönetebilir. Ödeme yöntemlerini yönetmek için lütfen Mağaza Sahibi %1$s (%2$s) ile iletişime geçin</string>
     <string name="product_detail_add_variations">Varyasyon ekle</string>
     <string name="product_variant_list_empty_action">Varyasyon Ekle</string>
@@ -23,7 +24,7 @@ Language: tr
     <string name="shipping_label_shipping_method_local_pickup">Mağazadan teslim</string>
     <string name="shipping_label_shipping_method_flat_rate">Sabit fiyat</string>
     <string name="shipping_label_shipping_carrier_flat_fee_banner_message">Müşteri nakliye için %1$s (%2$s) ödedi</string>
-    <string name="shipping_label_woo_discount_bottomsheet_message" formatted="false">WooCommerce ile gönderdim etiketi satın alırken, postane fiyatlarına kıyasla %5 ila %40 indirimden yararlanırsınız.</string>
+    <string name="shipping_label_woo_discount_bottomsheet_message">WooCommerce\'ten gönderim etiketi satın alırken, postane fiyatlarına kıyasla %5 ila %40 indirimden yararlanırsınız.</string>
     <string name="shipping_label_woo_discount_bottomsheet_title">WooCommerce  Hizmetleri indirimi nedir?</string>
     <string name="shipping_label_shipping_carrier_rates_generic_error">Gönderim seçenekleri yüklenirken hata oluştu</string>
     <string name="shipping_label_shipping_carrier_rates_unavailable">Seçilen adres ve paketler için gönderim seçeneği yok</string>
@@ -261,19 +262,15 @@ Language: tr
     <string name="feedback_product_give_feedback_button_text">Geri Bildirim Ver</string>
     <string name="product_detail_publish_product_success">Ürün yayınlandı</string>
     <string name="product_detail_publish_product_error">Ürün yayınlanırken hata oluştu</string>
-    <string name="product_publish_dialog_message">\@string/product_update_dialog_message</string>
     <string name="product_publish_dialog_title">Ürün yayınlanıyor</string>
     <string name="product_add_tool_bar_menu_button_done">YAYINLA</string>
     <string name="product_add_tool_bar_title">Yeni Ürün</string>
-    <string name="product_add_type_external_desc">\@string/product_type_external_desc</string>
-    <string name="product_add_type_grouped_desc">\@string/product_type_grouped_desc</string>
     <string name="product_add_type_variable_desc">Renk veya beden gibi çeşitleri olan bir ürün</string>
     <string name="product_add_type_simple_desc">Satılacak benzersiz bir ürün</string>
     <string name="product_add_type_external">Harici ürün</string>
     <string name="product_add_type_grouped">Gruplandırılmış ürün</string>
     <string name="product_add_type_variable">Varyasyonlu ürün</string>
     <string name="product_add_type_simple">Basit ürün</string>
-    <string name="product_add_type_list_header">\@string/product_type_list_header</string>
     <string name="product_images_image_limit_warning">Her ürün çeşidi için yalnızca bir fotoğraf görüntülenebilir</string>
     <string name="product_replace_photo">Fotoğrafı değiştir</string>
     <string name="product_add_photo">Fotoğraf ekle</string>
