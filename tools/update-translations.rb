@@ -3,6 +3,7 @@
 require 'fileutils'
 require 'open-uri'
 require 'uri'
+require 'nokogiri'
 
 LANG_FILE=File.join(__dir__, 'exported-language-codes.csv')
 RESDIR=File.join(__dir__, '..', 'WooCommerce', 'src', 'main', 'res')
@@ -28,19 +29,30 @@ File.write(LANGUAGE_DEF_FILE, langs_list_xml)
 
 
 # Download translations from GlotPress
+en_file = File.join(RESDIR, 'values', 'strings.xml')
+en_xml = File.open(en_file) { |f| Nokogiri::XML(f, nil, Encoding::UTF_8.to_s) }
+exclude_attrs = ['name', 'content_override']
+attr_map = en_xml.xpath('//string').map { |tag| [tag['name'], tag.attributes.reject { |k,_| exclude_attrs.include?(k) }] }.to_h
+
 language_map.each do |gp_code, android_code, _|
   next if gp_code == 'en-us' # en-us is our base locale, no translations to download for it!
 
   puts "Downloading translations for '#{android_code}' from GlotPress (#{gp_code})..."
   lang_dir = File.join(RESDIR, "values-#{android_code}")
+  lang_file = File.join(lang_dir, 'strings.xml')
   uri = URI.parse("#{GLOTPRESS_PROJECT_URL}/#{gp_code}/default/export-translations?filters[status]=current&format=android")
   begin
-    body = uri.read.force_encoding('UTF-8')
-    strings_xml = body.gsub('...', '…').gsub("\t", '    ')
+    xml = uri.open { |f| Nokogiri::XML(f.read.gsub("\t", '    '), nil, Encoding::UTF_8.to_s) }
+    xml.xpath('//string').each do |string_tag|
+      string_tag.content = string_tag.content.gsub('...', '…')
+      # Copy the XML attributes from the original (en) strings.xml on the translated entry
+      en_attrs = attr_map[string_tag['name']]
+      en_attrs&.each { |k,v| string_tag[k] = v }
+    end
     FileUtils.mkdir(lang_dir) unless Dir.exist?(lang_dir)
-    File.write(File.join(lang_dir, 'strings.xml'), strings_xml)
+    File.open(lang_file, 'w:UTF-8') { |f| f.write(xml.to_xml(indent: 4)) }
   rescue StandardError => e
-    puts "Error downloading #{gp_code} - #{response.code}: #{response.message}"
+    puts "Error downloading #{gp_code} - #{e.message}"
     FileUtils.rm_rf(File.join(RESDIR, "values-#{android_code}"))
   end
 end
