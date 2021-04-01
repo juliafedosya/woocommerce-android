@@ -26,7 +26,7 @@ it on [Google Play][woo-app]. If you're a developer wanting to contribute, read 
 
     ```bash
     $ git clone https://github.com/woocommerce/woocommerce-android.git
-    $ cd woocommerce-android
+    $ cd woocommerce-android  
     ```
 
 1. Generate the developer oauth2 tokens. These values get copied into the main `gradle.properties` file in the next step. See the [OAuth2 Authentication](#oauth2-authentication) section for details.
